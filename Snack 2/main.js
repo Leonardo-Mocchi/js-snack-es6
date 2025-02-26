@@ -44,7 +44,7 @@ console.log("og team is:", teams);
 //create new array
 const newTeamsArray = []
 
-//make this array have the same property as the original
+//make this array have the same objects as the original
 
 for (let i = 0; i < teams.length; i++) {
     const ThisTeam = teams[i];
@@ -52,7 +52,7 @@ for (let i = 0; i < teams.length; i++) {
 }
 console.log("new team array is:", newTeamsArray);
 
-
+//remove the score key
 for (let i = 0; i < newTeamsArray.length; i++) {
     const thisTeam = newTeamsArray[i];
     delete thisTeam.score
