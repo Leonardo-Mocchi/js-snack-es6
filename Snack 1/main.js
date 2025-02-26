@@ -28,7 +28,7 @@ console.log(bikes);
 let smallest = findSmallest(bikes)
 
 function findSmallest(arr) {
-    let upperLimit = 100
+    let upperLimit = Infinity
 
     for (let i = 0; i < arr.length; i++) {
         const thisBike = arr[i];
