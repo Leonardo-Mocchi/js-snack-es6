@@ -4,6 +4,7 @@
 // Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0. Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 // Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
+//create an array of objects
 const teams = [
     {
         name: "Milan",
@@ -32,38 +33,22 @@ const teams = [
     }
 ]
 
+//create new array
+const newTeamsArray = []
 
-//add some numbers through the Math.random
+
 for (let i = 0; i < teams.length; i++) {
     const thisTeam = teams[i];
+
+    //add some numbers through Math.random()
     thisTeam.score = Math.floor(Math.random() * 60) + 1
     thisTeam.foulsReceived = Math.floor(Math.random() * 10) + 1
+
+    //make new array have the same objects as the original minus the score
+    const newObj = { "name": thisTeam.name, "foulsReceived": thisTeam.foulsReceived }
+    newTeamsArray.push(newObj)
 }
+
 console.log("og team is:", teams);
 
-//create new array
-
-const newTeamsArray = []
-NewObj(teams)
-
-//make this array have the same objects as the original
-
-function NewObj(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const ThisTeam = arr[i];
-        const newObj = { "name": ThisTeam.name, "foulsReceived": ThisTeam.foulsReceived }
-        newTeamsArray.push(newObj)
-    }
-}
-
 console.log("new team array is:", newTeamsArray);
-
-//remove the score key
-/* for (let i = 0; i < newTeamsArray.length; i++) {
-    const thisTeam = newTeamsArray[i];
-    delete thisTeam.score
-}
- */
-console.log(newTeamsArray);
-
-
