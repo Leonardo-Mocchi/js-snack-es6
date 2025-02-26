@@ -23,31 +23,19 @@ const bikes = [
 
 console.log(bikes);
 
-
-
 let smallest = findSmallest(bikes)
 
-function findSmallest(arr) {
+//method 1 (uselessly complex)
+/* function findSmallest(arr) {
     let upperLimit = Infinity
 
     for (let i = 0; i < arr.length; i++) {
         const thisBike = arr[i];
-        console.log(thisBike.weight);
 
         if (thisBike.weight < upperLimit) {
             upperLimit = thisBike.weight
-            console.log(upperLimit);
-            console.log();
         }
-
-        /* if (thisBike.weight === upperLimit) {
-            console.log(thisBike);
-            return thisBike
-        } */
-
     }
-
-    console.log(upperLimit);
 
     for (let i = 0; i < arr.length; i++) {
         const disBike = arr[i];
@@ -56,10 +44,21 @@ function findSmallest(arr) {
         }
     }
 }
+*/
+
+//method 2 (Thanks Giuliano)
+function findSmallest(arr) {
+    let smallestBike = arr[0];
+    console.log(smallestBike);
+
+    for (let i = 0; i < arr.length; i++) {
+        const thisBike = arr[i];
+        if (thisBike.weight < smallestBike.weight) {
+            smallestBike = thisBike
+        }
+    }
+    return smallestBike
+}
 
 console.log("smallest is: ", smallest);
-
-
-
-
 
