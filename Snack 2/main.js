@@ -42,22 +42,28 @@ for (let i = 0; i < teams.length; i++) {
 console.log("og team is:", teams);
 
 //create new array
+
 const newTeamsArray = []
+NewObj(teams)
 
 //make this array have the same objects as the original
 
-for (let i = 0; i < teams.length; i++) {
-    const ThisTeam = teams[i];
-    newTeamsArray.push(ThisTeam)
+function NewObj(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const ThisTeam = arr[i];
+        const newObj = { "name": ThisTeam.name, "foulsReceived": ThisTeam.foulsReceived }
+        newTeamsArray.push(newObj)
+    }
 }
+
 console.log("new team array is:", newTeamsArray);
 
 //remove the score key
-for (let i = 0; i < newTeamsArray.length; i++) {
+/* for (let i = 0; i < newTeamsArray.length; i++) {
     const thisTeam = newTeamsArray[i];
     delete thisTeam.score
 }
-
+ */
 console.log(newTeamsArray);
 
 
