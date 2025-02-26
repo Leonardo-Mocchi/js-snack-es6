@@ -16,7 +16,7 @@ const bikes = [
         name: "unicycle power flows within me",
         weight: 5
     }, {
-        name: "victorian era bike was faster than me T.T",
+        name: "a victorian era bike was faster than me T.T",
         weight: 20
     }
 ]
@@ -25,8 +25,7 @@ console.log(bikes);
 
 
 
-const smallest = []
-findSmallest(bikes)
+let smallest = findSmallest(bikes)
 
 function findSmallest(arr) {
     let upperLimit = 100
@@ -36,10 +35,16 @@ function findSmallest(arr) {
         console.log(thisBike.weight);
 
         if (thisBike.weight < upperLimit) {
-            upperLimit === thisBike.weight
+            upperLimit = thisBike.weight
             console.log(upperLimit);
             console.log();
         }
+
+        /* if (thisBike.weight === upperLimit) {
+            console.log(thisBike);
+            return thisBike
+        } */
+
     }
 
     console.log(upperLimit);
@@ -47,12 +52,12 @@ function findSmallest(arr) {
     for (let i = 0; i < arr.length; i++) {
         const disBike = arr[i];
         if (disBike.weight === upperLimit) {
-            smallest.push(disBike)
+            return disBike
         }
     }
 }
 
-console.log(smallest);
+console.log("smallest is: ", smallest);
 
 
 
