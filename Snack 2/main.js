@@ -32,22 +32,30 @@ const teams = [
     }
 ]
 
+
+//add some numbers through the Math.random
 for (let i = 0; i < teams.length; i++) {
     const thisTeam = teams[i];
     thisTeam.score = Math.floor(Math.random() * 60) + 1
     thisTeam.foulsReceived = Math.floor(Math.random() * 10) + 1
 }
-console.log(teams);
+console.log("og team is:", teams);
 
-const newTeamsArray = removeScore(teams)
+//create new array
+const newTeamsArray = []
 
-function removeScore(arr) {
+//make this array have the same property as the original
 
-    for (let i = 0; i < arr.length; i++) {
-        const thisTeam = arr[i];
-        delete thisTeam.score
-    }
-    return teams
+for (let i = 0; i < teams.length; i++) {
+    const ThisTeam = teams[i];
+    newTeamsArray.push(ThisTeam)
+}
+console.log("new team array is:", newTeamsArray);
+
+
+for (let i = 0; i < newTeamsArray.length; i++) {
+    const thisTeam = newTeamsArray[i];
+    delete thisTeam.score
 }
 
 console.log(newTeamsArray);
